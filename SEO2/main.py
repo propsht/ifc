@@ -5,25 +5,35 @@ from bs4 import BeautifulSoup
 import requests
 
 
-# Step 1: Fetch sitemap URLs and save them to a JSON file
-def fetch_sitemap_urls(sitemap_url):
-    response = requests.get(sitemap_url)
-    if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'xml')
-        urls = [url_loc.text for url_loc in soup.find_all('loc')]
-        return urls
-    else:
-        print(f"Failed to fetch sitemap: {response.status_code}")
-        return []
+# # Step 1: Fetch sitemap URLs and save them to a JSON file
+# def fetch_sitemap_urls(sitemap_url):
+#     response = requests.get(sitemap_url)
+#     if response.status_code == 200:
+#         soup = BeautifulSoup(response.content, 'xml')
+#         urls = [url_loc.text for url_loc in soup.find_all('loc')]
+#         return urls
+#     else:
+#         print(f"Failed to fetch sitemap: {response.status_code}")
+#         return []
 
 
 # Step 2: Parse each page's content (title, description, h1) and save immediately
 async def parse_page_content(page, url):
     await page.goto(url)
+
+    # Wait for the page to be fully loaded (ensure all elements are present)
+    await page.wait_for_load_state("networkidle")  # "networkidle" waits until there are no network connections for at least 500 ms
+
+    # Optionally, you can wait for specific selectors to appear on the page (e.g., 'h1')
+    await page.wait_for_selector("h1", timeout=15000)  # Wait for an h1 element to be present (max 10 seconds)
+
+    # Get page title
     title = await page.title()
+
+    # Get description (if available)
     description = await page.locator("meta[name='description']").get_attribute("content")
 
-    # Disable strict mode for the `h1` locator to avoid errors with multiple h1 tags
+    # Get h1 text (first h1 tag found)
     h1_locator = page.locator("h1", strict=False)
     h1 = await h1_locator.first.text_content() if await h1_locator.count() > 0 else ""
 
