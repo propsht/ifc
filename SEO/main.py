@@ -9,3 +9,5 @@ def verify_pages(urls_with_expected_data):
 if __name__ == "__main__":
     urls_with_expected_data = fetch_and_parse_sitemap()
     verify_pages(urls_with_expected_data)
+
+
