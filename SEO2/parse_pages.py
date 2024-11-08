@@ -1,49 +1,33 @@
-import asyncio
-from playwright.async_api import async_playwright
-from urllib.parse import urlparse
+import xml.etree.ElementTree as ET
+import json
 
-# Function to parse a single page and extract title and description
-async def parse_page(page, url):
-    try:
-        print(f"Parsing {url}")
-        # Navigate to the page
-        await page.goto(url)
+# Parse the sitemap.xml file to extract URLs
+def parse_sitemap(file_path):
+    tree = ET.parse(file_path)
+    root = tree.getroot()
 
-        # Wait for the <h1> selector to be visible
-        await page.wait_for_selector('h1', timeout=10000)  # Increased timeout
+    # Extract URLs from the sitemap
+    urls = []
+    for url in root.findall(".//url/loc"):
+        urls.append(url.text)
 
-        # Extract the title and description
-        title = await page.title()
-        description = await page.query_selector('meta[name="description"]')
+    return urls
 
-        # Get the content of the description meta tag, if available
-        if description:
-            description_content = await description.get_attribute('content')
-        else:
-            description_content = "No description available"
+# Save the extracted URLs to a JSON file
+def save_urls_to_json(urls, output_file='sitemap_urls.json'):
+    data = {"urls": urls}
+    with open(output_file, 'w') as json_file:
+        json.dump(data, json_file, indent=4)
 
-        print(f"Title: {title}")
-        print(f"Description: {description_content}")
-    except Exception as e:
-        print(f"Failed to parse {url}: {str(e)}")
+def main():
+    # Specify the path to your sitemap.xml file
+    sitemap_file = 'sitemap.xml'
 
-# Function to parse multiple pages
-async def parse_pages(urls):
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
+    # Parse the sitemap and get URLs
+    urls = parse_sitemap(sitemap_file)
 
-        for url in urls:
-            await parse_page(page, url)
+    # Save the URLs to a JSON file
+    save_urls_to_json(urls)
 
-        await browser.close()
-
-# List of URLs to be parsed
-urls = [
-    'https://ifindcheaters.com',
-    'https://ifindcheaters.com/blog/',
-    'https://ifindcheaters.com/disclaimer/'
-]
-
-# Start parsing the pages
-asyncio.run(parse_pages(urls))
+if __name__ == "__main__":
+    main()
