@@ -4,15 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61f6b965-aa72-47c7-8eb8-5eab5209f50b" name="Changes" comment="SEO2 work parser">
-      <change afterPath="$PROJECT_DIR$/SEO2/parsed_results.txt" afterDir="false" />
+    <list default="true" id="61f6b965-aa72-47c7-8eb8-5eab5209f50b" name="Changes" comment="parsing sitemap and saving results">
+      <change afterPath="$PROJECT_DIR$/SEO/page_data_expect.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_compare_page_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO/data_storage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/SEO/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO/page_verifier.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO/parsed_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO/sitemap_parser.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SEO/sitemap_urls.json" beforeDir="false" afterPath="$PROJECT_DIR$/SEO/sitemap_urls.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEO2/fetch_sitemap.py" beforeDir="false" afterPath="$PROJECT_DIR$/SEO2/fetch_sitemap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEO2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/SEO2/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEO2/page_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/SEO2/page_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEO2/parse_pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/SEO2/parse_pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEO2/sitemap_urls.json" beforeDir="false" afterPath="$PROJECT_DIR$/SEO2/sitemap_urls.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO2/fetch_sitemap.py" beforeDir="false" afterPath="$PROJECT_DIR$/SEO/fetch_sitemap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO2/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO2/page_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/SEO/page_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO2/parse_pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/SEO/parse_pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO2/parsed_results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SEO/parsed_results.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEO2/sitemap_urls.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,17 +51,27 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for test_compare_page_data.test_page_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_compare_page_data.py.executor&quot;: &quot;Run&quot;,
     &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fetch_sitemap.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.maine.executor&quot;: &quot;Run&quot;,
     &quot;Python.parse_pages.executor&quot;: &quot;Run&quot;,
     &quot;Python.sitemap_parser.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/propsht/Documents/QA/projects/ifc/SEO&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SEO" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for test_compare_page_data.test_page_data">
+    <configuration name="fetch_sitemap" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ifc" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -62,11 +80,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SEO" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SEO/fetch_sitemap.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ifc" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SEO" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SEO/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -119,56 +159,43 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="parse_pages" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_compare_page_data.test_page_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="ifc" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SEO2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SEO2/parse_pages.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_compare_page_data.test_page_data&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="sitemap_parser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_compare_page_data.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="ifc" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SEO" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SEO/sitemap_parser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_compare_page_data.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_compare_page_data.test_page_data" />
+        <item itemvalue="Python tests.Python tests in test_compare_page_data.py" />
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.fetch_sitemap" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.parse_pages" />
-        <item itemvalue="Python.sitemap_parser" />
-        <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730904449623</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="parsing sitemap and saving results">
+      <option name="closed" value="true" />
+      <created>1731108484669</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731108484670</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -220,6 +255,7 @@
     <MESSAGE value="SEO parser" />
     <MESSAGE value="SEO2 parser" />
     <MESSAGE value="SEO2 work parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="SEO2 work parser" />
+    <MESSAGE value="parsing sitemap and saving results" />
+    <option name="LAST_COMMIT_MESSAGE" value="parsing sitemap and saving results" />
   </component>
 </project>
